@@ -1,0 +1,28 @@
+[
+  {
+    "level": 1,
+    "users": ["user1","user2" ],
+    "catalogs": ["catalog1"]
+  },
+  {
+    "level": 2,
+    "users": ["user6"],
+    "catalogs": ["catalog2"]
+  },
+  {
+    "level": 3,
+    "users": ["user5"],
+    "catalogs": []
+  },
+  {
+    "level": 4,
+    "users": ["user3"],
+    "catalogs": ["catalog4"]
+  },
+  {
+    "level": 5,
+    "users": ["user4"],
+    "catalogs": ["catalog3"]
+  }
+]
+

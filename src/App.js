@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styled from "styled-components";
+import configuration from "./Configuration.json";
+import { Users } from "./Users";
+import { Catalogs } from "./Catalogs";
+import { Action } from "./Action";
+import { Result } from "./Result";
 
-function App() {
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const App = () => {
+  const [user, setUser] = useState(configuration[0].users[0]);
+  const [catalog, setCatalog] = useState(configuration[0].catalogs[0]);
+  const [action, setAction] = useState("read");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Users user={user} setUser={setUser} />
+      <Catalogs catalog={catalog} setCatalog={setCatalog} />
+      <Action action={action} setAction={setAction} />
+      <Result user={user} catalog={catalog} action={action} />
+    </Wrapper>
   );
-}
-
-export default App;
+};
